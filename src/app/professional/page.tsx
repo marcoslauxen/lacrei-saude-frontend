@@ -5,46 +5,41 @@ import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 import Button from '@/app/components/Button';
 import Image from 'next/image';
-import Professional from '../../public/Image/professional.svg';
+import Doctors from '../../../public/Image/doctors.svg';
 import {
   PageWrapper,
-  HomeContainer,
+  ContentContainer,
   Content,
   ImageContainer,
-} from '@/app/styles/home';
+} from './styles';
 
-export default function Home() {
+export default function Professional() {
   const router = useRouter();
 
   return (
     <PageWrapper>
       <Header />
-      <HomeContainer>
+      <ContentContainer>
         <Content>
-          <h1>Boas vindas a Lacrei Saúde</h1>
+          <h1>Profissional</h1>
           <p>
-            Uma plataforma segura e acolhedora, conectando pessoas LGBTQIAPN+ a
-            profissionais de saúde qualificados.
+            Buscamos recrutar pessoas profissionais da saúde que entendam as
+            necessidades e se comprometam com o bem-estar da comunidade
+            LGBTQIAPN+
           </p>
           <div>
-            <Button onClick={() => router.push('/user')}>Pessoa Usuária</Button>
-            <Button
-              variant="outlined"
-              onClick={() => router.push('/professional')}
-            >
-              Profissional
-            </Button>
+            <Button onClick={() => router.push('/')}>Voltar para a Home</Button>
           </div>
         </Content>
         <ImageContainer>
           <Image
-            src={Professional}
+            src={Doctors}
             alt="Profissional de saúde"
             width={450}
             height={350}
           />
         </ImageContainer>
-      </HomeContainer>
+      </ContentContainer>
       <Footer />
     </PageWrapper>
   );
